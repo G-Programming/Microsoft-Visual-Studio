@@ -1,0 +1,4 @@
+string total="aaa,bbb,ccc,dddd";
+string[]strArray;
+				char[]charArray=new char[]{','};
+				strArray=total.Split(charArray);

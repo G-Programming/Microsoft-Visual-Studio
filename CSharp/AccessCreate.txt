@@ -1,0 +1,13 @@
+//Access table Men
+create table Men
+(
+	ID text(8) not null,
+	Xm text(20),
+	Photo binary,
+	Jbgz currency
+	Bt   currency,
+	Csrq datetime
+	Jl   memo,
+	Jh   boolean,
+	primary key(ID)
+)

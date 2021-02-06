@@ -1,0 +1,16 @@
+DataSet ds=new DataSet("XMLProducts");
+			//连接SQL Server数据库
+			SqlConnection conn=new SqlConnection(@"server=glf;uid=sa;pwd=;database=northwind");
+			SqlDataAdapter da=new SqlDataAdapter("SELECT * FROM products",conn);
+			//绑定DataGrid控件
+			da.Fill(ds,"products");
+			dataGrid1.DataSource=ds;
+			dataGrid1.DataMember="products";
+			doc=new XmlDataDocument(ds);
+			XmlNodeList nodeLst=doc.GetElementsByTagName("ProductName");
+			//将Xml结点加入item中
+			foreach(XmlNode nd in nodeLst)
+				listBox1.Items.Add(nd.InnerText);
+			//存盘
+			string file="product.xml";
+			ds.WriteXml(file);

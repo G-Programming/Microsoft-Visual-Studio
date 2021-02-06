@@ -1,0 +1,39 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[department]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[department]
+GO
+
+CREATE TABLE [dbo].[department] (
+	[Bmh] [char] (4) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[Bmmc] [varchar] (40) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Bmld] [char] (20) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+GO
+///////////////////////////////
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[Men]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[Men]
+GO
+
+CREATE TABLE [dbo].[Men] (
+	[Xm] [varchar] (20) COLLATE Chinese_PRC_CI_AS NULL ,
+	[ID] [char] (8) COLLATE Chinese_PRC_CI_AS NOT NULL ,
+	[Photo] [image] NULL ,
+	[Jbgz] [money] NULL ,
+	[Bt] [money] NULL ,
+	[Csrq] [datetime] NULL ,
+	[Jh] [bit] NULL 
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+////////////////////////////////
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[Users]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[Users]
+GO
+
+CREATE TABLE [dbo].[Users] (
+	[Name] [char] (20) COLLATE Chinese_PRC_CI_AS NULL ,
+	[Password] [varchar] (20) COLLATE Chinese_PRC_CI_AS NULL ,
+	[rights] [varchar] (20) COLLATE Chinese_PRC_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+

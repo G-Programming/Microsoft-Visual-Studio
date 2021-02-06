@@ -1,0 +1,4 @@
+this.oleDbDataAdapter1.Fill(this.dataSet11,1,0,"JianL");
+oleDbDataAdapter1-数据适配器
+dataSet11-数据集
+JianL-表
